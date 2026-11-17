@@ -1,0 +1,5 @@
+# ReAct-Based Intelligent Travel Planning Agent
+# Core agent operates purely on Python 3.10+ standard libraries (no external API keys required).
+
+# Optional interactive dashboard:
+streamlit>=1.30.0

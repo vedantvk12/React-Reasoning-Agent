@@ -1,0 +1,489 @@
+{
+  "goal": {
+    "destination": "Goa",
+    "duration_days": 2,
+    "num_people": 2,
+    "budget_ceiling": 10000.0,
+    "raw_goal": "Plan a 2-day trip to Goa for 2 people within a budget of \u20b910,000, including transportation, accommodation, food, and sightseeing."
+  },
+  "initial_tasks": [
+    {
+      "task_id": "step_1",
+      "name": "Calculate transportation expenses",
+      "action": "calculate_transport",
+      "params": {
+        "destination": "Goa",
+        "num_people": 2
+      },
+      "status": "SUCCESS",
+      "cost": 2000.0,
+      "result": {
+        "success": true,
+        "action_name": "calculate_transport",
+        "message": "Transportation estimated at \u20b92,000 (Konkan Express (AC 3-Tier Sleeper) round-trip for 2 people at \u20b91,000 each).",
+        "cost": 2000.0,
+        "data": {
+          "mode": "Konkan Express (AC 3-Tier Sleeper)",
+          "cost_per_person": 1000.0,
+          "num_people": 2,
+          "total_cost": 2000.0,
+          "destination": "Goa"
+        },
+        "failure_reason": null
+      },
+      "is_replanned": false
+    },
+    {
+      "task_id": "step_2",
+      "name": "Find suitable accommodation",
+      "action": "search_accommodation",
+      "params": {
+        "destination": "Goa",
+        "duration_days": 2,
+        "num_people": 2,
+        "hotel_name": "Sunset Beach Resort"
+      },
+      "status": "FAILED",
+      "cost": 0.0,
+      "result": {
+        "success": false,
+        "action_name": "search_accommodation",
+        "message": "Selected hotel 'Sunset Beach Resort' is unavailable. (Fully booked for the selected dates due to peak weekend season.)",
+        "cost": 0.0,
+        "data": {
+          "attempted_hotel": "Sunset Beach Resort",
+          "available": false
+        },
+        "failure_reason": "Fully booked for the selected dates due to peak weekend season."
+      },
+      "is_replanned": false
+    },
+    {
+      "task_id": "step_3",
+      "name": "Estimate food expenses",
+      "action": "estimate_food_cost",
+      "params": {
+        "duration_days": 2,
+        "num_people": 2
+      },
+      "status": "SUCCESS",
+      "cost": 3000.0,
+      "result": {
+        "success": true,
+        "action_name": "estimate_food_cost",
+        "message": "Food expenses estimated at \u20b93,000 (2 days x 2 people @ \u20b9750/person/day for Local Goan Beach Shacks & Authentic Thalis).",
+        "cost": 3000.0,
+        "data": {
+          "duration_days": 2,
+          "num_people": 2,
+          "cost_per_person_day": 750.0,
+          "total_cost": 3000.0,
+          "cuisine_style": "Local Goan Beach Shacks & Authentic Thalis"
+        },
+        "failure_reason": null
+      },
+      "is_replanned": false
+    },
+    {
+      "task_id": "step_4",
+      "name": "Select sightseeing activities",
+      "action": "select_sightseeing",
+      "params": {
+        "destination": "Goa",
+        "duration_days": 2,
+        "num_people": 2
+      },
+      "status": "SUCCESS",
+      "cost": 1200.0,
+      "result": {
+        "success": true,
+        "action_name": "select_sightseeing",
+        "message": "Sightseeing and local scooter rental estimated at \u20b91,200. Selected: Fort Aguada, Calangute/Baga beaches, Old Goa churches & 2-day scooter rental.",
+        "cost": 1200.0,
+        "data": {
+          "destination": "Goa",
+          "activities": "Fort Aguada, Calangute/Baga beaches, Old Goa churches & 2-day scooter rental",
+          "total_cost": 1200.0
+        },
+        "failure_reason": null
+      },
+      "is_replanned": false
+    },
+    {
+      "task_id": "step_5",
+      "name": "Calculate total expenses",
+      "action": "calculate_total_budget",
+      "params": {},
+      "status": "SUCCESS",
+      "cost": 8200.0,
+      "result": {
+        "success": true,
+        "action_name": "calculate_total_budget",
+        "message": "Total expenses calculated at \u20b98,200 (Transport: \u20b92,000, Accommodation: \u20b92,000, Food: \u20b93,000, Sightseeing: \u20b91,200).",
+        "cost": 8200.0,
+        "data": {
+          "total_cost": 8200.0,
+          "breakdown": {
+            "transportation": 2000.0,
+            "accommodation": 2000.0,
+            "food": 3000.0,
+            "sightseeing": 1200.0
+          }
+        },
+        "failure_reason": null
+      },
+      "is_replanned": false
+    },
+    {
+      "task_id": "step_6",
+      "name": "Verify budget compliance",
+      "action": "verify_budget",
+      "params": {
+        "budget_ceiling": 10000.0
+      },
+      "status": "SUCCESS",
+      "cost": 0.0,
+      "result": {
+        "success": true,
+        "action_name": "verify_budget",
+        "message": "Plan is within budget. Total \u20b98,200 is within limit of \u20b910,000. Remaining savings buffer: \u20b91,800.",
+        "cost": 0.0,
+        "data": {
+          "is_within_budget": true,
+          "total_cost": 8200.0,
+          "budget_ceiling": 10000.0,
+          "remaining_savings": 1800.0
+        },
+        "failure_reason": null
+      },
+      "is_replanned": false
+    }
+  ],
+  "current_tasks": [
+    {
+      "task_id": "step_1",
+      "name": "Calculate transportation expenses",
+      "action": "calculate_transport",
+      "params": {
+        "destination": "Goa",
+        "num_people": 2
+      },
+      "status": "SUCCESS",
+      "cost": 2000.0,
+      "result": {
+        "success": true,
+        "action_name": "calculate_transport",
+        "message": "Transportation estimated at \u20b92,000 (Konkan Express (AC 3-Tier Sleeper) round-trip for 2 people at \u20b91,000 each).",
+        "cost": 2000.0,
+        "data": {
+          "mode": "Konkan Express (AC 3-Tier Sleeper)",
+          "cost_per_person": 1000.0,
+          "num_people": 2,
+          "total_cost": 2000.0,
+          "destination": "Goa"
+        },
+        "failure_reason": null
+      },
+      "is_replanned": false
+    },
+    {
+      "task_id": "step_2",
+      "name": "Find suitable accommodation",
+      "action": "search_accommodation",
+      "params": {
+        "destination": "Goa",
+        "duration_days": 2,
+        "num_people": 2,
+        "hotel_name": "Sunset Beach Resort"
+      },
+      "status": "FAILED",
+      "cost": 0.0,
+      "result": {
+        "success": false,
+        "action_name": "search_accommodation",
+        "message": "Selected hotel 'Sunset Beach Resort' is unavailable. (Fully booked for the selected dates due to peak weekend season.)",
+        "cost": 0.0,
+        "data": {
+          "attempted_hotel": "Sunset Beach Resort",
+          "available": false
+        },
+        "failure_reason": "Fully booked for the selected dates due to peak weekend season."
+      },
+      "is_replanned": false
+    },
+    {
+      "task_id": "step_2_replan",
+      "name": "Book alternative accommodation (Budget Guesthouse)",
+      "action": "replan_accommodation",
+      "params": {
+        "destination": "Goa",
+        "duration_days": 2,
+        "num_people": 2,
+        "preferred_type": "budget_guesthouse",
+        "hotel_name": "Palm Breeze Budget Guesthouse"
+      },
+      "status": "SUCCESS",
+      "cost": 2000.0,
+      "result": {
+        "success": true,
+        "action_name": "replan_accommodation",
+        "message": "Alternative guesthouse 'Palm Breeze Budget Guesthouse' successfully selected for \u20b92,000. Includes AC Double Room near beach with verified availability.",
+        "cost": 2000.0,
+        "data": {
+          "name": "Palm Breeze Budget Guesthouse",
+          "cost": 2000.0,
+          "type": "Cozy AC Budget Guesthouse",
+          "location": "Near Calangute Beach, North Goa"
+        },
+        "failure_reason": null
+      },
+      "is_replanned": true
+    },
+    {
+      "task_id": "step_3",
+      "name": "Estimate food expenses",
+      "action": "estimate_food_cost",
+      "params": {
+        "duration_days": 2,
+        "num_people": 2
+      },
+      "status": "SUCCESS",
+      "cost": 3000.0,
+      "result": {
+        "success": true,
+        "action_name": "estimate_food_cost",
+        "message": "Food expenses estimated at \u20b93,000 (2 days x 2 people @ \u20b9750/person/day for Local Goan Beach Shacks & Authentic Thalis).",
+        "cost": 3000.0,
+        "data": {
+          "duration_days": 2,
+          "num_people": 2,
+          "cost_per_person_day": 750.0,
+          "total_cost": 3000.0,
+          "cuisine_style": "Local Goan Beach Shacks & Authentic Thalis"
+        },
+        "failure_reason": null
+      },
+      "is_replanned": false
+    },
+    {
+      "task_id": "step_4",
+      "name": "Select sightseeing activities",
+      "action": "select_sightseeing",
+      "params": {
+        "destination": "Goa",
+        "duration_days": 2,
+        "num_people": 2
+      },
+      "status": "SUCCESS",
+      "cost": 1200.0,
+      "result": {
+        "success": true,
+        "action_name": "select_sightseeing",
+        "message": "Sightseeing and local scooter rental estimated at \u20b91,200. Selected: Fort Aguada, Calangute/Baga beaches, Old Goa churches & 2-day scooter rental.",
+        "cost": 1200.0,
+        "data": {
+          "destination": "Goa",
+          "activities": "Fort Aguada, Calangute/Baga beaches, Old Goa churches & 2-day scooter rental",
+          "total_cost": 1200.0
+        },
+        "failure_reason": null
+      },
+      "is_replanned": false
+    },
+    {
+      "task_id": "step_5",
+      "name": "Calculate total expenses",
+      "action": "calculate_total_budget",
+      "params": {},
+      "status": "SUCCESS",
+      "cost": 8200.0,
+      "result": {
+        "success": true,
+        "action_name": "calculate_total_budget",
+        "message": "Total expenses calculated at \u20b98,200 (Transport: \u20b92,000, Accommodation: \u20b92,000, Food: \u20b93,000, Sightseeing: \u20b91,200).",
+        "cost": 8200.0,
+        "data": {
+          "total_cost": 8200.0,
+          "breakdown": {
+            "transportation": 2000.0,
+            "accommodation": 2000.0,
+            "food": 3000.0,
+            "sightseeing": 1200.0
+          }
+        },
+        "failure_reason": null
+      },
+      "is_replanned": false
+    },
+    {
+      "task_id": "step_6",
+      "name": "Verify budget compliance",
+      "action": "verify_budget",
+      "params": {
+        "budget_ceiling": 10000.0
+      },
+      "status": "SUCCESS",
+      "cost": 0.0,
+      "result": {
+        "success": true,
+        "action_name": "verify_budget",
+        "message": "Plan is within budget. Total \u20b98,200 is within limit of \u20b910,000. Remaining savings buffer: \u20b91,800.",
+        "cost": 0.0,
+        "data": {
+          "is_within_budget": true,
+          "total_cost": 8200.0,
+          "budget_ceiling": 10000.0,
+          "remaining_savings": 1800.0
+        },
+        "failure_reason": null
+      },
+      "is_replanned": false
+    }
+  ],
+  "trace_history": [
+    {
+      "step_number": 1,
+      "thought": "I need to arrange transportation before selecting accommodation.",
+      "action": "calculate_transport()",
+      "action_input": {
+        "destination": "Goa",
+        "num_people": 2
+      },
+      "observation": "Transportation estimated at \u20b92,000 (Konkan Express (AC 3-Tier Sleeper) round-trip for 2 people at \u20b91,000 each).",
+      "status": "SUCCESS",
+      "cost": 2000.0
+    },
+    {
+      "step_number": 2,
+      "thought": "I will now check accommodation availability.",
+      "action": "search_accommodation()",
+      "action_input": {
+        "destination": "Goa",
+        "duration_days": 2,
+        "num_people": 2,
+        "hotel_name": "Sunset Beach Resort"
+      },
+      "observation": "Selected hotel 'Sunset Beach Resort' is unavailable. (Fully booked for the selected dates due to peak weekend season.)",
+      "status": "FAILED",
+      "cost": 0.0
+    },
+    {
+      "step_number": 3,
+      "thought": "The original accommodation assumption is incorrect. I need to revise the plan.",
+      "action": "replan_accommodation()",
+      "action_input": {
+        "destination": "Goa",
+        "duration_days": 2,
+        "num_people": 2,
+        "preferred_type": "budget_guesthouse",
+        "hotel_name": "Palm Breeze Budget Guesthouse"
+      },
+      "observation": "Alternative guesthouse 'Palm Breeze Budget Guesthouse' successfully selected for \u20b92,000. Includes AC Double Room near beach with verified availability.",
+      "status": "SUCCESS",
+      "cost": 2000.0
+    },
+    {
+      "step_number": 4,
+      "thought": "Accommodation is secured. Now I should estimate food expenses.",
+      "action": "estimate_food_cost()",
+      "action_input": {
+        "duration_days": 2,
+        "num_people": 2
+      },
+      "observation": "Food expenses estimated at \u20b93,000 (2 days x 2 people @ \u20b9750/person/day for Local Goan Beach Shacks & Authentic Thalis).",
+      "status": "SUCCESS",
+      "cost": 3000.0
+    },
+    {
+      "step_number": 5,
+      "thought": "Food costs are estimated. Next, I will select sightseeing activities.",
+      "action": "select_sightseeing()",
+      "action_input": {
+        "destination": "Goa",
+        "duration_days": 2,
+        "num_people": 2
+      },
+      "observation": "Sightseeing and local scooter rental estimated at \u20b91,200. Selected: Fort Aguada, Calangute/Baga beaches, Old Goa churches & 2-day scooter rental.",
+      "status": "SUCCESS",
+      "cost": 1200.0
+    },
+    {
+      "step_number": 6,
+      "thought": "All individual trip components have been calculated. I will now aggregate the total trip expenses.",
+      "action": "calculate_total_budget()",
+      "action_input": {},
+      "observation": "Total expenses calculated at \u20b98,200 (Transport: \u20b92,000, Accommodation: \u20b92,000, Food: \u20b93,000, Sightseeing: \u20b91,200).",
+      "status": "SUCCESS",
+      "cost": 8200.0
+    },
+    {
+      "step_number": 7,
+      "thought": "I must now verify whether the total calculated expenses fit within the user's budget limit of \u20b910,000.",
+      "action": "verify_budget()",
+      "action_input": {
+        "budget_ceiling": 10000.0
+      },
+      "observation": "Plan is within budget. Total \u20b98,200 is within limit of \u20b910,000. Remaining savings buffer: \u20b91,800.",
+      "status": "SUCCESS",
+      "cost": 0.0
+    }
+  ],
+  "replanning_occurred": true,
+  "failed_task": {
+    "task_id": "step_2",
+    "name": "Find suitable accommodation",
+    "action": "search_accommodation",
+    "params": {
+      "destination": "Goa",
+      "duration_days": 2,
+      "num_people": 2,
+      "hotel_name": "Sunset Beach Resort"
+    },
+    "status": "FAILED",
+    "cost": 0.0,
+    "result": {
+      "success": false,
+      "action_name": "search_accommodation",
+      "message": "Selected hotel 'Sunset Beach Resort' is unavailable. (Fully booked for the selected dates due to peak weekend season.)",
+      "cost": 0.0,
+      "data": {
+        "attempted_hotel": "Sunset Beach Resort",
+        "available": false
+      },
+      "failure_reason": "Fully booked for the selected dates due to peak weekend season."
+    },
+    "is_replanned": false
+  },
+  "replanning_reason": "Fully booked for the selected dates due to peak weekend season.",
+  "replanned_task": {
+    "task_id": "step_2_replan",
+    "name": "Book alternative accommodation (Budget Guesthouse)",
+    "action": "replan_accommodation",
+    "params": {
+      "destination": "Goa",
+      "duration_days": 2,
+      "num_people": 2,
+      "preferred_type": "budget_guesthouse",
+      "hotel_name": "Palm Breeze Budget Guesthouse"
+    },
+    "status": "SUCCESS",
+    "cost": 2000.0,
+    "result": {
+      "success": true,
+      "action_name": "replan_accommodation",
+      "message": "Alternative guesthouse 'Palm Breeze Budget Guesthouse' successfully selected for \u20b92,000. Includes AC Double Room near beach with verified availability.",
+      "cost": 2000.0,
+      "data": {
+        "name": "Palm Breeze Budget Guesthouse",
+        "cost": 2000.0,
+        "type": "Cozy AC Budget Guesthouse",
+        "location": "Near Calangute Beach, North Goa"
+      },
+      "failure_reason": null
+    },
+    "is_replanned": true
+  },
+  "total_cost": 8200.0,
+  "is_within_budget": true,
+  "remaining_savings": 1800.0
+}
